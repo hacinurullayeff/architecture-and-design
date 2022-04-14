@@ -1,41 +1,159 @@
-.App {
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,800&display=swap');
+
+:root {
+    --yellow : #C59221;
+    --white : #fff;
+
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* HEADER  */
+
+.header{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../public/images/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.hero{
+    width: 32rem;
+    height: 20rem;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    animation-name: slidein;
+    animation-duration: 1s;
+}
+
+.main-text{
+    color: var(--white);
+    font-size: 4rem;
+    text-shadow: 1px 1px rgb(214, 214, 214);
+    font-family: 'Nunito', sans-serif;
+}
+
+.hero>p{
+    font-size: 1.8rem;
+    color: var(--white);
+    text-shadow: 1px 1px rgb(214, 214, 214);
+}
+
+.btn-yellow{
+    background-color: var(--yellow);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+@keyframes slidein {
+    from {
+      top: 100%;
     }
+  
+    to {
+      top: 50%;
+    }
+  }
+
+/* HEADER ENDS */
+
+/* NAVBAR STARTS */
+
+.navbar-icon{
+    position: fixed;
+    top: 1.5rem;
+    right: 1.2rem;
+    
 }
 
-.App-header {
-    min-height: 100vh;
+.hamburger{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    width: 20rem;
+    height: 100vh;
+    padding: 2.5rem;
+    background: var(--white);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
+    justify-content: space-between;
+
+}
+
+.open{
+    right: 0;
+}
+
+.media-icons{
+    display: flex;
+    margin-bottom: 5rem;
+    justify-content: space-around;
+}
+
+.fa-xmark{
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.navigation ul li {
+    margin: 1rem 0;
+}
+.navigation ul li a{
+    font-size: 2.2rem;
+    color: #000;
+    font-family: 'Fredoka', sans-serif;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    box-shadow: inset 0 0 0 0 var(--yellow);
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    
+}
+
+.navigation ul li a:hover{
+    box-shadow: inset 200px 0 0 0 var(--yellow);
     color: white;
 }
 
-.App-link {
-    color: #61dafb;
+.fa-brands{
+    font-size: 1.6rem;
+    color: rgb(48, 48, 48);
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
+/* NAVBAR ENDS */
 #tsparticles {
     position: fixed;
     height: 100%;
@@ -46,3 +164,4 @@
     top: 0;
     z-index: -1;
 }
+
