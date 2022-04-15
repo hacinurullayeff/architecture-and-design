@@ -124,9 +124,23 @@
     justify-content: space-around;
 }
 
+
 .fa-xmark{
     font-size: 1.6rem;
     cursor: pointer;
+}
+
+.fa-xmark:hover::after{
+    content: "close";
+    position: absolute;
+    top: 2.31rem;
+    left: 4.375rem;
+    padding: .6rem;
+    font-size: .8rem;
+    color: var(--white);
+    background-color: var(--yellow);
+    -webkit-clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+    		clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
 }
 
 .navigation ul li {
@@ -149,9 +163,13 @@
 }
 
 .fa-brands{
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: rgb(48, 48, 48);
     cursor: pointer;
+}
+
+.fa-brands:hover{
+    color: var(--yellow);
 }
 
 @media only screen and (max-width: 1150px) {
