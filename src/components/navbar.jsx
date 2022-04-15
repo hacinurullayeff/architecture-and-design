@@ -1,26 +1,26 @@
-import React,{useRef} from 'react'
-
-const doc = useRef(null);
+import React, { useRef } from 'react'
 
 
-const openNavbar = () =>{
-    iconHamburger = document.querySelector('.hamburger')
-    navbar = document.querySelector('.navbar')
-    iconClose = document.querySelector('.close')
-   
-   function openNavbar(){
-       navbar.classList.add('open')
-   }
-   
-   iconHamburger.addEventListener('click', openNavbar)
-}
 
-const navbar = () => {
+const Navbar = () => {
+    const navbarRef = useRef()
+    const hamburgerRef = useRef()
+    const closeRef = useRef()
+
+    const openNavbar = () => {
+        navbarRef.current.style.right = "0"
+    }
+
+    const closeNavbar = () => {
+        navbarRef.current.style.right = "-26rem"
+    }
+
   return (
     <div className="navbar-icon">
-        <button className="hamburger"><i class="fa-solid fa-bars"></i></button>
-        <div ref={openNavbar} className="navbar">
-            <div className="close"><i class="fa-solid fa-xmark"></i></div>
+        <button onClick={openNavbar} ref={hamburgerRef} className="hamburger"><i className="fa-solid fa-bars"></i></button>
+        <div ref={navbarRef} className='navbar'>
+            <div onClick={closeNavbar} ref={closeRef} className='close'>
+                <i className="fa-solid fa-xmark"></i></div>
             <div className="navigation">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -32,9 +32,9 @@ const navbar = () => {
             </div>
             <div className="social-media">
                 <ul className='media-icons'>
-                    <li><a href="#"><i class="fa-brands fa-facebook-square"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram-square"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter-square"></i></a></li>
+                    <li><a href="#"><i className="fa-brands fa-facebook-square"></i></a></li>
+                    <li><a href="#"><i className="fa-brands fa-instagram-square"></i></a></li>
+                    <li><a href="#"><i className="fa-brands fa-twitter-square"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -42,4 +42,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar
