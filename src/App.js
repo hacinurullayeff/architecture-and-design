@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import Particles from "react-tsparticles";
 import './App.css'; 
-import particlesOptions from "./particles.json";
-import Header from "./components/header"
-import Navbar from "./components/navbar"
+import Header from "./components/Header"
+import Navbar from "./components/Navbar"
+import About from "./components/About"
+import Team from './components/Team';
 import ClipLoader from "react-spinners/ClipLoader"
 
 
@@ -16,26 +16,29 @@ function App() {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 1000)
+        }, 5000)
     },[])
     return (
         <div className="App">
-            <Particles options={particlesOptions}/>
             {
                 loading ?
-
+                
+                <div className='loader'>
                 <ClipLoader
                 
                 color={"#C59221"}
                 loading={loading}
                 size={60} 
                 />
+                </div>
 
                 :
                 
                 <div>
-                    <Header/>
-                    <Navbar/>
+                    <Header />
+                    <Navbar />
+                    <About />
+                    <Team />
                 </div>
             }
                 

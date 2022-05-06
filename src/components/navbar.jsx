@@ -32,9 +32,9 @@ const Navbar = () => {
             </div>
             <div className="social-media">
                 <ul className='media-icons'>
-                    <li><a href="#"><i className="fa-brands fa-facebook-square"></i></a></li>
-                    <li><a href="#"><i className="fa-brands fa-instagram-square"></i></a></li>
-                    <li><a href="#"><i className="fa-brands fa-twitter-square"></i></a></li>
+                    <li><a href="#"><i className="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
                 </ul>
             </div>
         </div>
