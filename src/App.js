@@ -4,7 +4,11 @@ import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import About from "./components/About"
 import Team from './components/Team';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import ClipLoader from "react-spinners/ClipLoader"
+import Backtotop from './components/Backtotop';
+
 
 
 
@@ -39,6 +43,9 @@ function App() {
                     <Navbar />
                     <About />
                     <Team />
+                    <Contact />
+                    <Footer />
+                    <Backtotop />
                 </div>
             }
                 
